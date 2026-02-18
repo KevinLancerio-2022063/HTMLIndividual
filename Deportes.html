@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deportes</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align:center;
+    background:#e7f0ff;
+}
+
+#login{
+    margin-top:80px;
+}
+
+input{
+    padding:8px;
+    margin:10px;
+}
+
+.campo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+}
+
+.icono{
+    width:40px;
+    height:40px;
+}
+
+#inicio{
+    display:none;
+    padding:20px;
+}
+
+.tarjeta{
+    background:white;
+    padding:15px;
+    margin:15px auto;
+    width:60%;
+    border-radius:10px;
+    box-shadow:0px 0px 8px gray;
+}
+
+button{
+    padding:10px 20px;
+    margin-top:10px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div id="login">
+    <h2>Iniciar Sesión</h2>
+
+    <div class="campo">
+        <img src="C:\Users\Sebas\Downloads\Usuario.png" class="icono">
+        <input type="text" id="user" placeholder="Usuario">
+    </div>
+
+    <div class="campo">
+        <img src="C:\Users\Sebas\Downloads\password.png" class="icono">
+        <input type="password" id="pass" placeholder="Contraseña">
+    </div>
+
+    <button onclick="entrar()">Entrar</button>
+
+    <p id="error" style="color:red;"></p>
+</div>
+
+<div id="inicio">
+
+    <h1>⚽ Mundo Deportivo</h1>
+    <p>¡Bienvenido!</p>
+
+    <div class="tarjeta">
+        <h2>Fútbol</h2>
+        <p>El fútbol es el deporte más popular del mundo.
+            <b>
+            Se juega entre dos equipos de 11 jugadores y el objetivo es anotar goles en la portería rival.
+            </b>
+            </p>
+    </div>
+
+    <div class="tarjeta">
+        <h2>Baloncesto</h2>
+        <p>El baloncesto se juega entre dos equipos de 5 jugadores. 
+            <b>
+            El objetivo es encestar el balón en el aro contrario.
+            </b>
+            </p>
+    </div>
+
+    <div class="tarjeta">
+        <h2>Natación</h2>
+        <p>La natación es un deporte acuático que desarrolla resistencia, coordinación y capacidad pulmonar.</p>
+    </div>
+
+    <button onclick="salir()">Cerrar sesión</button>
+
+</div>
+
+
+<script>
+
+function entrar(){
+
+    var usuario = document.getElementById("user").value;
+    var password = document.getElementById("pass").value;
+
+    if(usuario == "usuario" && password == "123"){
+
+        document.getElementById("login").style.display = "none";
+        document.getElementById("inicio").style.display = "block";
+
+    }else{
+        document.getElementById("error").innerHTML = "Usuario o contraseña incorrectos";
+    }
+}
+
+function salir(){
+    document.getElementById("inicio").style.display = "none";
+    document.getElementById("login").style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
